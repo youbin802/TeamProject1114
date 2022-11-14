@@ -24,6 +24,9 @@ public class HonorDAO {
 	final String getReply = "select h.id as honorId, u.name as name, u.id as writer_id, h.id as reply_id,h.content as content, h.write_date as write_date from HonorReply h, users u where h.honor_id = ? and u.id= h.writer_id";
 	final String insertHonor = "insert into honor values (?,?,?,?)";
 	final String honorMod = "update honor set content =? , writer_date = ? where id =?";
+
+	
+	
 	public HonorVO getHonor(int now) {
 		HonorVO vo =null;
 		try {

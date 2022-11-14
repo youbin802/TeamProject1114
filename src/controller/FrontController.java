@@ -36,6 +36,8 @@ public class FrontController extends HttpServlet {
 		controllerMap.put("/yd-world/notice", new NoticeController());
 		controllerMap.put("/yd-world/notice/writeForm", new NoticeWriteFormController());
 		controllerMap.put("/yd-world/notice/updateForm", new NoticeUpdateFormController());
+		controllerMap.put("/yd-world/noticeTypeAdd", new NoticeTypeAddController());
+	
 	
 
 		controllerMap.put("/yd-world/honor", new HonorController());

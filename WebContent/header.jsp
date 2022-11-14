@@ -24,6 +24,7 @@
 	String profile_img =vo.getProfile_img();
 	String userId = vo.getId();
 	int identity = vo.getIdentity();
+	
 %>
 
     <div class="container">

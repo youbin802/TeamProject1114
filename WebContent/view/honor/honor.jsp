@@ -59,11 +59,12 @@ function addPage(page, book, list,reply, type) {
 			console.log(id+content);
 			nowNoticeId = id;
 			
-			console.log("구간2");
+			console.log("구ㅇㅇ간2");
 			console.log(userId, writer_id);
+			honorId = id;
 			if(userId == writer_id) {
-				honorId = id;
-				console.log(honorId+"");
+			
+				console.log(honorId+"ㄴㅇㄹㄴㅇㄹ");
 				element.html('<div class="data"><div class="text-area"><div><small>박유빈   '+writer_date+'</small></div><a id="modHonor">수정하기</a></div><div class="bar-div"></div><p>'+content+'</p></div>');
 			}else {
 				element.html('<div class="data"><div class="text-area"><div><small>박유빈   '+writer_date+'</small></div></div><div class="bar-div"></div><p>'+content+'</p></div>');
@@ -78,6 +79,8 @@ function addPage(page, book, list,reply, type) {
     	}else {
     		console.log("두 번쨰");
     		console.log(reply);
+			var dom = document.createElement('div');
+			dom.className = 'scroll-layout';
     		$.each(reply, function(key, val) {
     			var content= val.content;
     			var writerId = val.writerId;
@@ -86,6 +89,8 @@ function addPage(page, book, list,reply, type) {
     			var name = val.name;
     			console.log("함수 돌기");
     			console.log(content);
+    
+    			
     			var div = document.createElement('div');
     			div.className = 'reply-div';
                 div.innerHTML= `<div class="reply-head">
@@ -105,9 +110,23 @@ function addPage(page, book, list,reply, type) {
                 $(div).find(".name").text(name);
 	    		$(div).find(".date").text(date);
 	    		$(div).find(".reply-bottom > p").text(content);
-	    		element.append(div);
+	    		dom.append(div)
+	    		element.append(dom);
+	    	
                 
     		})
+    		var replyWriteDiv = document.createElement('div');
+    		console.log("------------------------댓글");
+    		console.log(replyWriteDiv);
+    		replyWriteDiv.className = 'reply-write-div';
+    		replyWriteDiv.innerHTML =` <form><div class="reply-write d-flex justify-content-between">
+    		<input type="hidden" name="noticeId" >
+    		<input type="text" class="form-control" name="content" id="content" placeholder="댓글을 쓰세요!">
+    		<button type="button" id="replyBtn" class="btn btn-success text-white" style="width: 100px; margin-left: 5px;">작성</button>
+    		</div></form>`;
+    		element.append(replyWriteDiv);
+    	
+    		
     	}
     	
     }, 1000);

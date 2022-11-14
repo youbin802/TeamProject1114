@@ -151,3 +151,5 @@ create table noticeType (
 
 insert into noticeType values (1, '도서관');	
 insert into noticeType values (2, '급식');	
+SELECT * FROM  noticeType WHERE selection IN ('도서관');
+

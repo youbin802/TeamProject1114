@@ -19,6 +19,7 @@ public class NoticeDAO {
 	
 	final String insertNotice = "insert into notice values(?,?,?,?,?,?)";
 	final String getMaxId =  "select max(id)+1 as max from notice";
+	final String getMaxSelectId =  "select max(id)+1 as max from noticeType";
 	final String getNoticeList ="select n.id as id, n.title as title, u.name as name, nImg.imgName as nImg \r\n"
 			+ "from noticeImgs nImg, notice n, users u\r\n"
 			+ "where n.id = nImg.noticeId  and u.id = n.writer_id order by n.id desc";
@@ -40,7 +41,63 @@ public class NoticeDAO {
 	final String delImgs = "delete from noticeImgs where noticeId = ?";
 	final String mainNotice = "select n.id as id, n.content as content, nImg.imgname as img\r\n"
 			+ "from notice n, noticeImgs nImg where n.id = nImg.noticeId";
+	final String insertType ="insert into noticeType values (?,?)";
 	
+	final String containsCheck = "SELECT * FROM  noticeType WHERE selection IN (?)";
+	
+	public int containsCheck(String text) {
+		int contains = 0;
+		try {
+			con = JdbcUtil.getConnection();
+			pstmt = con.prepareStatement(containsCheck);
+			pstmt.setString(1, text);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString("id") != null) {
+					contains = 1;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return contains;
+	}
+	
+	
+	public int getMaxSelectId() {
+		System.out.println("겟믹스 컴온 =============");
+		int id = 0;
+		try {
+			con = JdbcUtil.getConnection();
+			pstmt = con.prepareStatement(getMaxSelectId);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				id = rs.getInt("max");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("이거라구욧!!!!!!!!!!!!!"+id);
+		return id;
+	}
+	
+
+	public int insertSelect(String Maxid, String type) {
+		int n = 0;
+		
+		try {
+			con = JdbcUtil.getConnection();
+			pstmt = con.prepareStatement(insertType);
+			pstmt.setString(1,Maxid);
+			pstmt.setString(2, type);
+
+			n = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n;
+	}
 	public ArrayList<String> getNoticeType() {
 		ArrayList<String> noticeType = new ArrayList<String>();
 

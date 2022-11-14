@@ -23,9 +23,17 @@
                 </a>
             </div>
             <div class="d-flex mb-3">
+             <a href="/yd-world/notice?type=all"><button type="button" class="btn btn-dark mr-2">전체</button></a>
           	  <% for(String selectText : noticeType) { %>
             <a href="/yd-world/notice?type=<%=selectText%>"><button type="button" class="btn btn-dark mr-2"><%= selectText %></button></a>
               <% }  %>
+              
+              <% if(identity < 2) {%>
+              <div class="add-div d-flex">
+            	     
+            	     <a class="typeAddBtn"><button type="button" class="btn btn-dark mr-2">+추가</button></a>
+            	</div>    
+             <% }%>
             </div>
             <div class="sub-notice scroll-layout">
              <% for(NoticeVO notice : noticeList) { %>
@@ -61,5 +69,15 @@
     <link rel="stylesheet" href="<%=path %>/css/notice.css">
     <script src="<%=path %>/js/jquery-3.6.0.min.js"></script>
     <script src="<%=path %>/js/notice.js"></script>
+    <script>
+    	$(".typeAddBtn").click(function() {
+    		console.log("클릭");
+    		$(".add-div").html('');
+    		$(".add-div").append(`<form action="/yd-world/noticeTypeAdd" method="post">
+            	    	<input class="p-2" type="text" name="type" placeholder="공지 분류 타입 입력">
+             
+             		<a><button type="submit" class="btn btn-dark mr-2">추가하기</button></a>		</form>	`);
+    	})
+    </script>
     
 <%@ include file="../../footer.jsp" %>
