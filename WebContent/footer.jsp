@@ -1,3 +1,4 @@
+<%@page import="org.apache.catalina.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      </div>
@@ -26,6 +27,48 @@
             </form>
         </div>
     </div>
-     
+         <div class="modal modal-write" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">명예의 전당 글 작성하기</h5>
+              <button type="button" class="btn btn-primary close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="/honorMod" method="post">
+                <div class="modal-body">
+                <input type="hidden" name="userId" id="userIdInput">
+                <textarea id="w3review"  name="content" rows="4" cols="60"></textarea>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">작성</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+        <div class="modal modalMod" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">명예의 전당 글 작성하기</h5>
+              <button type="button" class="btn btn-primary close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="/honorMod" method="post">
+                <div class="modal-body">
+                <input type="hidden" name="userId" id="userIdInput">
+                <input type="text" name="honorId" id="honorIdInput">
+                    <textarea id="w3review" class="contentTextArea" name="content" rows="4" cols="60"></textarea>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">작성</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
 </body>
 </html>

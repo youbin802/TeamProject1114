@@ -23,6 +23,7 @@ public class HonorDAO {
 	final String getMaxId =  "select max(id)+1 as max from honor";
 	final String getReply = "select h.id as honorId, u.name as name, u.id as writer_id, h.id as reply_id,h.content as content, h.write_date as write_date from HonorReply h, users u where h.honor_id = ? and u.id= h.writer_id";
 	final String insertHonor = "insert into honor values (?,?,?,?)";
+	final String honorMod = "update honor set content =? , writer_date = ? where id =?";
 	public HonorVO getHonor(int now) {
 		HonorVO vo =null;
 		try {
@@ -129,6 +130,23 @@ public class HonorDAO {
 			pstmt.setString(4,formateNow);
 			n = pstmt.executeUpdate();
 			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n;
+	}
+
+	public int honorMod(String honorId, String content) {
+		int n=0;
+		try {
+			con = JdbcUtil.getConnection();
+			pstmt = con.prepareStatement(honorMod);
+			pstmt.setString(1, content);
+			LocalDateTime now = LocalDateTime.now();
+			String formateNow = now.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 ss초"));
+			pstmt.setString(2,formateNow);
+			pstmt.setString(3, honorId);
+			n = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

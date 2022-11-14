@@ -7,19 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vo.BoardVO;
-
 /**
- * Servlet implementation class honorWrite
+ * Servlet implementation class honorMod
  */
-@WebServlet("/honorWrite")
-public class honorWrite extends HttpServlet {
+@WebServlet("/honorMod")
+public class honorMod extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public honorWrite() {
+    public honorMod() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,18 +27,10 @@ public class honorWrite extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		
-		System.out.println("here");
+		String honorId = request.getParameter("honorId");
 		String content = request.getParameter("content");
-		String userId = request.getParameter("userId");
-
-		
-		HonorDAO dao =new HonorDAO();
-		int honorMaxId = dao.getMaxId();
-		String honorId =String.valueOf(honorMaxId);
-		int n = dao.insertHonor(honorId,content, userId);
-		System.out.println(n);
-		
+		HonorDAO dao = new HonorDAO();
+		int n = dao.honorMod(honorId, content);
 		response.sendRedirect("/yd-world/honor");
 	}
 

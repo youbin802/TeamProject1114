@@ -13,7 +13,7 @@
             <div class="sub-head">
                 <a href="notice.html">
                     <h2>명예의 전당</h2>
-                    <a href="<%= path %>/yd-world/honor/writeForm">작성하기 ></a>
+                    <a id="write">작성하기 ></a>
                 </a>
             </div>
            <div class="sub-notice">
@@ -27,7 +27,7 @@
            	
     	   </div>
     </div>
-
+               <input type="hidden" name="userId" id="userId" value="<%= userId %>">
 
     <script>
 
@@ -35,6 +35,9 @@
 var numberOfPages = 1000; 
 
 var nowPage =0;
+var userId = $("#userId").val();
+var honorId;
+console.log("유저 아이디====================", userId);
 
 function addPage(page, book, list,reply, type) {
   if (!book.turn('hasPage', page)) {
@@ -54,9 +57,24 @@ function addPage(page, book, list,reply, type) {
 			var writer_id = list[0].writer_id;
 			var writer_date = list[0].writer_date;
 			console.log(id+content);
+			nowNoticeId = id;
 			
-	    	element.html('<div class="data"><div class="text-area"><div><small>박유빈   '+writer_date+'</small></div><a href=/yd-world/board/updateForm?id='+id+'>수정하기</a></div><div class="bar-div"></div><p>'+content+'</p></div>'
-	    	);    		
+			console.log("구간2");
+			console.log(userId, writer_id);
+			if(userId == writer_id) {
+				honorId = id;
+				console.log(honorId+"");
+				element.html('<div class="data"><div class="text-area"><div><small>박유빈   '+writer_date+'</small></div><a id="modHonor">수정하기</a></div><div class="bar-div"></div><p>'+content+'</p></div>');
+			}else {
+				element.html('<div class="data"><div class="text-area"><div><small>박유빈   '+writer_date+'</small></div></div><div class="bar-div"></div><p>'+content+'</p></div>');
+			}
+			
+			element.find("#modHonor").click(function() {
+				console.log("글수정하22는 ㄱ놋========");
+				$(".modalMod").find("#honorIdInput").val(honorId);
+				$(".modalMod").find(".contentTextArea").val(content);
+				$(".modalMod").show()
+			}) 		
     	}else {
     		console.log("두 번쨰");
     		console.log(reply);
@@ -171,6 +189,19 @@ $( document ).ready( function() {
 		nowPage =nowPage+1;
 	      $('#book').turn('next');
 	})
+});
+
+$( document ).ready( function() {
+	$("#write").click(function() {
+		console.log("글작성하e는곳============="+userId);
+		$(".modal-write").find("#userIdInput").val(userId);
+
+		$(".modal-write").show();
+	})
+	$(".close").click(function() {
+		$(".modal-write").hide();
+	})
+
 });
 function loadReply(now) {
 	console.log("댓글 가져오는 함수 z"+now);

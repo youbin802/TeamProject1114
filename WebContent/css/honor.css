@@ -1,5 +1,16 @@
 @charset "UTF-8";
-
+.modal-content {
+            position: absolute;
+    width: 600px;
+    background-color: #fff;
+    height: 300px;
+    top: 51%;
+    transform: translateX(-50%);
+    padding: 20px;
+        }
+.modal {
+	background-color: #26262699;
+}
 
 #book {
 	    height:675px !important;
