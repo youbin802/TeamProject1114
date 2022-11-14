@@ -1,0 +1,158 @@
+.project-img-box {
+    width: 100%;
+    height: 98%;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+
+.project-contain {
+    margin-left: 10px;
+    width: 100%;
+    height: 95%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.project-explain-box {
+    width: 100%;
+    height: 100%;
+}
+
+.head-explain {
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(244, 243, 243, 0.532);
+    height: 100px;
+    box-shadow: 3px 2px 3px 1px rgba(125, 139, 167, 0.195);
+
+}
+
+.project-img-box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.project-img-box .project-main-img{
+    width: 100%; height: 100%;
+    position: relative;
+}
+
+.project-main-img .project-img-slide-images-box{
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+}
+
+.project-img-box .project-img-slide-images-box{
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.project-img-box img{
+    object-fit: cover;
+}
+
+
+.project-img-box .project-img-slide{
+    display: none;
+    
+}
+
+.project-img-slide .project-img-slide-images{
+    display: flex;
+    width: 100%;height: 180px;
+    /* border: 1px solid #000; */
+    background-color: #fff;
+    z-index: 500;
+    position: absolute;
+    left: 0; bottom: 0;
+    overflow: auto;
+}
+
+.project-img-slide img{
+    width: 180px; height: 158px;
+    margin: 0 .4em;
+    cursor: pointer;
+}
+
+.project-img-slide img:first-child{
+    margin-left: 0;
+}
+.project-img-slide img:last-child{
+    margin-right: 0;
+}
+
+
+/* 스크롤 디자인 */
+.project-img-slide-images::-webkit-scrollbar{
+    height: .9em;
+}
+
+.project-img-slide-images::-webkit-scrollbar-thumb{
+    background-color: #b9c8e7;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.project-img-slide-images::-webkit-scrollbar-track{
+    background-color: rgb(223, 223, 223);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+.project-explain-box .min-p {
+    margin-top: 5px;
+    display: flex;
+}
+
+.explain-text-box {
+    position: relative;
+    border: 1px solid rgba(244, 243, 243, 0.532);
+    margin-top: 30px;
+    width: 100%;
+    box-shadow: 3px 2px 3px 1px rgba(125, 139, 167, 0.195);
+    height: 490px;
+    border-radius: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(87, 87, 87, 0.855) !important;
+}
+
+.input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.explain-submit {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.project-img-slide-images-box{
+    position: relative;
+}
+
+.project-img-slide-images-box .close{
+    position: absolute;
+    top: 8px; right: 8px;
+    background-color: #ddd;
+    width: 20px; height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}

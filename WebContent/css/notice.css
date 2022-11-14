@@ -1,0 +1,78 @@
+.sub-notice {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 90%;
+    
+}
+
+.sub-notice-box {
+    width: 373px;
+    height: 373px;
+}
+
+
+.sub-notice-box img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.big-notice{
+    position: absolute;
+    width: 100vw; height: 100vh;
+    /* top: 0; left: 0; */
+    background-color: rgba(0, 0, 0, 0.267);
+    display: none;
+}
+
+.notice-pop{
+    width: 50%; height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    /* background-color: #fff; */
+    border-radius: 10px;
+}
+
+.notice-pop h2{
+    padding: 1.2em .4em;
+    background-color: #fff;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+
+.notice-pop p{
+    font-size: 1.3em;
+    padding: 0 .4em;
+    background-color: #fff;
+}
+
+.notice-pop span{
+    display: inline-block;
+    width: 100%;
+    border-top: 1px solid #000;  
+}
+
+.notice-pop img{
+    height: 900px;
+    object-fit: cover;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.big-notice .close{
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    right: 3%;
+    cursor: pointer;
+}
+

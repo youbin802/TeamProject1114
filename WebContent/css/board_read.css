@@ -1,0 +1,80 @@
+.sub-section .board-content-box {
+    border: 1px solid rgba(236, 236, 236, 0.729);
+    box-shadow: 8px 0px 30px 0px rgb(0 0 0 / 7%);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.sub-section .board-reply-box {
+    border: 1px solid rgba(236, 236, 236, 0.729);
+    box-shadow: 8px 0px 30px 0px rgb(0 0 0 / 7%);
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.board-content-box {
+    width: 100%;
+    height: 50%;
+    padding-top: 20px !important;
+}
+
+.board-head {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board-head > div > .profile-img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.board-head > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.board-reply-box {
+    width: 100%;
+    height: 40%;
+}
+
+.reply-head {
+    display: flex;
+    align-items: center;
+}
+
+.reply-head > .profile-img {
+    width: 25px;
+    height: 25px;
+}
+
+.reply-head > p {
+    margin-left: 3px;
+    font-size: 13px;
+}
+
+.reply-content {
+    overflow: auto;
+    overflow-x: hidden;
+    height: 90%;
+}
+
+.reply-content > div {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.reply-bottom > p {
+    padding-top: 10px;
+    font-size: 17px;
+}
+
+/* js 관련 css */
+.replyCorrection{
+    width: 800px;
+    padding: 0 0.75rem;
+}

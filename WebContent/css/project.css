@@ -1,0 +1,12 @@
+.sub-project {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    height: 700px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.sub-project > .project-box {
+    margin-bottom: 20px;
+}
+

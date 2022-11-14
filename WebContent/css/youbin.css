@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none !important;
+    color: #000;
+    /* cursor: pointer; */
+}
+
+/* util  */
+body {
+    background-color: rgba(154, 175, 218, 0.455);
+}
+
+button {
+    background-color: #8AD0DB !important;
+    /* background-color: #91C3E6; */
+}
+p {
+    margin-bottom: 0 !important;
+}
+
+/* 기본 */
+.container {
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: 50%;
+    padding: 0 !important;
+    left: 50%;
+    display: grid;
+    grid-template-columns: repeat(2,170px);
+    transform: translate(-50%,-50%);
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.945);
+}
+
+header {
+    padding-top: 50px;
+    background-color: rgba(141, 163, 206, 0.684);
+    width: 170px;
+    height: 100%;
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-section {
+    border-radius: 0 30px 30px 0;
+    background-color: #f3f3f36e;
+    width: 87.2%;
+    height: 100%;
+    right: 0;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    padding-top: 25px;
+    padding-left: 10px;
+}
+
+.main-card-contain {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.main-card-contain:last-child {
+    width: 99%;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.main-card h2 {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(111, 111, 111) !important;
+}
+
+.view-box {
+    box-shadow: 5px 6px 9px 0px rgb(0 0 0 / 7%);
+    width: 95%;
+    height: 310px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* 작품 레이아웃 */
+.project-box {
+    position: relative;
+    width: 235px;
+    height: 270px;
+    border-radius: 10px;
+    box-shadow: 5px 6px 9px 0px rgb(0 0 0 / 7%);
+
+}
+
+.project-box img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.project-text {
+    height: 30%;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.project-text p:first-child {
+    font-weight: bold;
+}
+
+/* 프로젝트 하트 */
+.min-p {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.good-wrap {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.good-wrap > i {
+    color: #dc5858 /* !important */;
+}
+
+.min-p > p {
+    color: rgb(104, 104, 104) !important;
+}
+
+.good-wrap > p {
+    margin-left: 2px;
+}
+
+/* .good {
+    line-height: 14px;
+    position: absolute;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    top: 2%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 3px 3px 1px rgba(46, 46, 46, 0.192);
+}
+
+.good > p {
+    font-size: 12px;
+}
+
+.good > i {
+    color: #f37272 !important;
+} */
+
+/* 메인 작품실 레이아웃 */
+.main-project{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-project .project-box {
+    margin: 10px;
+}
+
+
+/* 메인 공지모음실 레이아웃 */
+.main-notice {
+    padding: 17px;
+}
+
+.notice-box {
+    width: 100%;
+    height: 135px;
+    display: flex;
+}
+
+.notice-box:first-child {
+    margin-bottom: 10px;
+}
+
+.notice-box img {
+    width: 50%;
+    height: 100%;
+}
+
+.notice-text {
+    position: relative;
+    margin-left: 10px;
+    width: 200px;
+    /* display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start; */
+}
+
+.notice-text button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px
+}
+
+
+/* 급식 영역 */
+.lunch-card > .view-box{
+    position: relative;
+}
+
+.lunch-box {
+    position: absolute;
+    top: 10%;
+    height: 200px;
+    width: 92%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.lunch-box li {
+    font-weight: bold;
+    color: rgb(109, 109, 109) !important;
+}
+/* 임시 */
+.lunch-img {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    bottom: 8%;
+    background-color: #ddd;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* 메인페이지 게시판 영역*/
+.mainpage-board-box {
+    padding-top: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainpage-board-box a {
+    padding: 0 15px;
+    margin: 5px;
+    border-radius: 2px;
+    box-shadow: 3px 2px 3px 1px rgba(125, 139, 167, 0.195);
+    width: 95%;
+    height: 50px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainpage-board-box a:hover {
+    background-color: rgba(154, 175, 218, 0.258)
+}
+
+/* 헤더 부분 */
+
+.logo {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgb(241, 241, 241);
+}
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+header > nav {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+header > nav > a {
+    margin-bottom: 40px;
+}
+
+
+header > nav > a img{
+    width: 33px;
+    height: 33px;
+}
+
+.footer-profile-nav{
+    margin-top: 160px;
+}
+
+.footer-profile-nav .logout {
+    margin-top: 35px;
+}
+
+/* 공용 프로필 css */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* sub 페이지 공통 */
+.sub-section {
+    padding: 20px;
+    width: 87.2%;
+    height: 100%;
+    right: 0;
+    position: absolute;
+}
+
+.sub-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.sub-head > a:last-child {
+    font-weight: bold;
+    color: rgb(142, 142, 142) !important;
+}
+
+.sub-section > div > a > h2 {
+    font-size: 20px;
+    padding-top: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: rgb(111, 111, 111) !important;
+}
+
+.scroll-layout::-webkit-scrollbar {
+    width: 7px;
+}
+
+.scroll-layout::-webkit-scrollbar-thumb {
+    background-color: #b0bae3;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.scroll-layout::-webkit-scrollbar-track {
+    background-color: #b0bae37d;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px white;
+}
+
+/* popup css */
+.big-notice{
+    position: absolute;
+    width: 100vw; height: 100vh;
+    /* top: 0; left: 0; */
+    background-color: rgba(0, 0, 0, 0.267);
+    display: none;
+}
+
+.notice-pop{
+    width: 50rem; height: 60rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    /* background-color: #fff; */
+    border-radius: 10px;
+}
+
+.notice-pop h2{
+    padding: 1.2em .4em;
+    background-color: #fff;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+
+.notice-pop p{
+    font-size: 1.3em;
+    padding: 0 .4em;
+    background-color: #fff;
+}
+
+.notice-pop span{
+    display: inline-block;
+    width: 100%;
+    border-top: 1px solid #000;  
+}
+
+.notice-pop-img{
+    width: 100%; height: 48rem;
+}
+
+.notice-pop img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.big-notice .close{
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 25%;
+    right: 3%;
+    cursor: pointer;
+}
+
+
+.modal-popup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.modal-content {
+    position: absolute;
+    width: 600px;
+    background-color: #fff;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+}
+
+.modal-content h5 {
+    padding: 5px 0;
+    margin-bottom: 0 !important;
+}
+
+.notice-img {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+}
+
+.close-btn {
+    font-size: 20px;
+    position: absolute;
+    right: 3%;
+    top: 2%;
+    transition: .4s;
+
+    padding: 4px;
+    border-radius: 10px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    padding-bottom: 8px;
+}
+
+.close-btn:hover {
+    color: #fff !important;
+    background-color: rgba(154, 175, 218, 0.455);
+}
+
+
+.login-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+	display: none;
+}
+
+.login-popup-content {
+    width: 350px;
+    height: 200px;
+    background-color: #fff;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+}
